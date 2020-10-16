@@ -1,0 +1,36 @@
+body
+{
+    width: auto;
+}
+h1, h3
+{
+    text-align:center;
+}
+h3
+{
+    background-color:black;
+    color:white;
+    font-size:0.9em;
+    margin-bottom:0px;
+}
+.admin_login
+{
+    margin-left:85%;
+    border: 1px solid black;
+}
+.news p
+{
+    width: auto;
+    background-color:#CCCCCC;
+    margin-top:0px;
+}
+.news
+{
+    width:70%;
+    margin:auto;
+}
+a
+{
+    text-decoration: none;
+    color: blue;
+}

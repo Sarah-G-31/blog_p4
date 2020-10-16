@@ -1,0 +1,48 @@
+h1, h2
+{
+    text-align: center;
+}
+.warning
+{
+    color: rgb(255, 0, 0);
+    margin-bottom: -12px;
+}
+.bouton
+{
+    margin: 50px 30px;
+    padding: 30px;
+    font-size: 200%;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+h3
+{
+    text-align: center;
+    background-color:black;
+    color:white;
+    font-size:0.9em;
+    margin-bottom:0px;
+}
+.news p
+{
+    width: auto;
+    background-color:#CCCCCC;
+    margin-top:0px;
+}
+.news
+{
+    width:70%;
+    margin:auto;
+}
+a
+{
+    color: black;
+    text-decoration: none;
+}
+.admin_quitter
+{
+    margin-left:92%;
+    border: 1px solid black;
+}
