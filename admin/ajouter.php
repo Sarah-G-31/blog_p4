@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_SESSION['id_groupe']) AND $_SESSION['id_groupe'] == 2)
+{
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +29,9 @@
 
     </body>
 </html>
-
+<?php
+}
+?>
 
 
 

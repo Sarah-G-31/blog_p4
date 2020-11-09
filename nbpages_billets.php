@@ -1,9 +1,9 @@
 <?php
 include('connexion_bdd.php');
 
-$billetsParPage = 5; // Nombre de billet que l'on veut par page (ici 5)
+$billetsParPage = 3;
 
-$retour_total = $bdd->query('SELECT COUNT(*) as NbBillets FROM billets'); // (COUNT)Compte tout le nombre de billet dans la table billets et retour la valeur dans NbBillets
+$retour_total = $bdd->query('SELECT COUNT(*) as NbBillets FROM billets');
 $donnees = $retour_total->fetch();
 $totalBillet = $donnees['NbBillets'];
 

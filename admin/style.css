@@ -1,0 +1,96 @@
+h1, h2
+{
+    text-align: center;
+}
+.warning
+{
+    color: rgb(255, 0, 0);
+    margin-bottom: -12px;
+}
+.titre
+{
+    font-size: 200%;
+    width: 15%;
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    background-color: rgb(233, 200, 16);
+}
+.bouton
+{
+    margin: 15px 0px 60px 0px;
+    padding: 30px;
+    font-size: 200%;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+.bouton a
+{
+    width: 150px;
+}
+h3
+{
+    text-align: center;
+    background-color:black;
+    color:white;
+    font-size:0.9em;
+    margin-bottom:0px;
+}
+.news p
+{
+    width: auto;
+    background-color:#CCCCCC;
+    margin-top:0px;
+}
+.news
+{
+    width:70%;
+    margin:auto;
+}
+a
+{
+    color: black;
+    text-decoration: none;
+}
+.admin_quitter
+{
+    margin-left:92%;
+    border: 1px solid black;
+}
+.texte
+{
+    margin: auto;
+    width: 80%;
+    padding-bottom: 5px;
+    background-color:#CCCCCC;
+}
+.texte :nth-child(odd)
+{
+    background-color:rgb(97, 95, 95);
+    color: white;
+}
+.texte p
+{
+    padding-left: 3px;
+}
+#annuler
+{
+    float: right;
+    margin-right: 10px;
+    border: 1px solid black;
+    background-color:rgb(97, 95, 95);
+    color: white;
+}
+#delete
+{
+    float: right;
+    margin-right: 10px;
+    border: 1px solid black;
+    background-color: red;
+    color: black;
+}

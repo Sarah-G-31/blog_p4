@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_SESSION['id_groupe']) AND $_SESSION['id_groupe'] == 2)
+{
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,9 +36,12 @@
         ?>        
 
         <div class="news">Êtes vous sur de vouloir supprimer ce billet ?
-            <input type="button" value="oui" onclick="window.location.href='delete.php?billet=<?php echo $_GET['billet']; ?>';"> / 
+            <input type="button" value="oui" onclick="window.location.href='delete_billet.php?billet=<?php echo $_GET['billet']; ?>';"> / 
             <input type="button" value="non" onclick="window.location.href='supprimer.php';">
         </div><br />
 
     </body>
 </html>
+<?php
+}
+?>
