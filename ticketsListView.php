@@ -19,7 +19,7 @@ while($data_tickets = $tickets->fetch())
         </h3>
         <p class="news p">
             <?= nl2br($data_tickets['content']); ?><br />
-            <a href="comment.php?ticket=<?= $data_tickets['id']; ?>"><i>Commentaires</i></a>
+            <a href="index.php?action=ticket&amp;id=<?= $data_tickets['id']; ?>"><i>Commentaires</i></a>
         </p><br />
     </div>
     <?php
