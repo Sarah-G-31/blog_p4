@@ -1,15 +1,7 @@
 <?php
-    try
-    {
-        $bdd = new PDO('mysql:host=localhost;dbname=blog_p4;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    }
-    catch(Exception $e)
-    {
-        die('Erreur : '.$e->getMessage());
-    }
+require('model.php');
 
-    // Récupération de tous les billets dans la bdd
-    $retour_billets = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date FROM billets ORDER BY id DESC');
+$tickets = ticketsList();
 
-    require('affichageAccueil.php');
+require('affichageAccueil.php');
 ?>
