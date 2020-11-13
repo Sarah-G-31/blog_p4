@@ -1,9 +1,0 @@
-<?php
-include('../connexion_bdd.php');
-
-$req = $bdd->prepare('DELETE FROM billets WHERE id = :id');
-$req->bindParam(':id', $_GET['billet'], PDO::PARAM_INT);
-$req->execute();
-
-header('Location: supprimer.php');
-?>

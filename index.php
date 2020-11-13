@@ -1,24 +1,15 @@
 <?php
-session_start();
+    try
+    {
+        $bdd = new PDO('mysql:host=localhost;dbname=blog_p4;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    }
+    catch(Exception $e)
+    {
+        die('Erreur : '.$e->getMessage());
+    }
+
+    // Récupération de tous les billets dans la bdd
+    $retour_billets = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date FROM billets ORDER BY id DESC');
+
+    require('affichageAccueil.php');
 ?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <?php include('head.php'); ?>
-    </head>
-    <body>
-
-        <h1>Mon super blog !</h1>
-
-        <div class="nbpagesup"><?php include('nbpages_billets.php'); ?></div>
-
-        <div class="boutons"><?php include('pseudo_et_boutons.php'); ?></div>
-
-        <div class="billets"><?php include('billets.php'); ?></div>
-
-        <div class="nbpagesdown"><?php include('nbpages_billets.php'); ?></div>
-
-    </body>
-</html>
-
