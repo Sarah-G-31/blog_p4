@@ -3,5 +3,4 @@ require('model.php');
 
 $tickets = ticketsList();
 
-require('affichageAccueil.php');
-?>
+require('indexView.php');

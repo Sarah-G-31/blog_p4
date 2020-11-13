@@ -1,0 +1,170 @@
+body
+{
+    width: auto;
+}
+h1, h3
+{
+    text-align:center;
+}
+h2
+{
+    width: 80%;
+    margin: 2% 10% 2% 10%;
+}
+h3
+{
+    background-color:black;
+    color:white;
+    font-size:0.9em;
+    margin-bottom:0px;
+}
+h4
+{
+    width: 15%;
+    text-align: center;
+}
+.nbpagesup
+{
+    display: inline-block;
+    position: absolute;
+    top: 80px;
+    vertical-align: top;
+    margin-bottom: 30px;
+}
+.nbpagesdown
+{
+    display: inline-block;
+
+}
+.boutons
+{
+    display: inline-block;
+    position: absolute;
+    top: 80px;
+    right: 4px;
+    vertical-align: top;
+}
+.billets
+{
+    margin-top: 100px;
+}
+#admin
+{
+    width: auto;
+    border: 1px solid black;
+}
+#inscription
+{
+    background-color: orange;
+    width: 85px;
+    border: 1px solid black;
+}
+#connexion
+{
+    width: 85px;
+    border: 1px solid black;
+}
+#deconnexion
+{
+    width: 85px;
+    border: 1px solid black;
+}
+.news p
+{
+    width: auto;
+    background-color:#CCCCCC;
+    margin-top:0px;
+}
+.news
+{
+    width:70%;
+    margin:auto;
+}
+.texte
+{
+    margin: auto;
+    width: 80%;
+    padding-bottom: 5px;
+    background-color:#CCCCCC;
+}
+.texte :nth-child(odd)
+{
+    background-color:rgb(97, 95, 95);
+    color: white;
+}
+.texte p
+{
+    padding-left: 3px;
+}
+#signaler, #deja_signaler, #supprimer
+{
+    float: right;
+    background-color: rgb(13, 13, 160);
+    color: white;
+    text-align: center;
+    margin-right: 10px;
+}
+a
+{
+    text-decoration: none;
+    color: blue;
+}
+.form_inscription, .form_connexion
+{
+    padding: 2.5% 0% 2.5% 0%;
+    display: flex;
+    width: 15%;
+    background-color: dimgray;
+    border-radius: 30px;
+    opacity: 0.5;
+
+}
+.p_inscription, .p_connexion
+{
+    margin: auto;
+    padding: 5%;
+    background-color: white;
+}
+.titre
+{
+    text-align: center;
+    margin-bottom: 15%;
+}
+.label
+{
+    width: auto;
+    display: block;
+    margin: 5% 0% 0% 0%;
+    text-align: left;
+}
+.email
+{
+    margin-bottom: 5%;
+}
+.submit_form
+{
+    width: 100%;
+    display: block;
+    margin: auto;
+    font-weight: bold;
+    background-color: rgb(27, 125, 223);
+    color: black;
+}
+#aideEmail, #infoMdp, #infoMdp1, #infoMdp2, #aidePseudo
+{
+    position: absolute;
+    left: 16%;
+    color:red;
+}
+.form_commentaire
+{
+    width: 80%;
+    margin: auto;
+    vertical-align: bottom;
+}
+.commentaire
+{
+    display: inline-flex;
+    vertical-align: bottom;
+    margin-top: 15px;
+}

@@ -11,8 +11,7 @@ function ticketsList()
     }
 
     // Récupération de tous les billets dans la bdd
-    $tickets = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date FROM billets ORDER BY id DESC');
+    $tickets = $bdd->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS date FROM tickets ORDER BY id DESC');
 
-    require('affichageAccueil.php');
+    return $tickets;
 }
-?>
