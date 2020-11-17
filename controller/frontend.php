@@ -1,11 +1,11 @@
 <?php
-require('model.php');
+require('model/frontend.php');
 
 function tickets()
 {
     $tickets = ticketsList();
 
-    require('ticketsListView.php');
+    require('view/frontend/ticketsListView.php');
 }
 
 function comments()
@@ -15,10 +15,10 @@ function comments()
 
     if (empty($ticket['id']))
     { 
-        require('errorView.php');
+        require('view/frontend/errorView.php');
     } 
     else 
     {
-        require('commentView.php');
+        require('view/frontend/commentView.php');
     }
 }

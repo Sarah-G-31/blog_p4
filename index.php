@@ -1,5 +1,5 @@
 <?php
-require('controller.php');
+require('controller/frontend.php');
 
 if (isset($_GET['action'])) { // Pourquoi faire ?
     if ($_GET['action'] == 'tickets') {
