@@ -30,6 +30,16 @@ function getComments($ticketId)
     return $comments;
 }
 
+function postComment($ticketId, $author, $comment)
+{
+    $bdd = bddConnect();
+
+    $comments = $bdd->prepare('INSERT INTO comments (id_tickets, author, comment) VALUES (?, ?, ?)');
+    $affectedLines = $comments->execute(array($ticketId, $author, $comment));
+
+    return $affectedLines;
+}
+
 function bddConnect()
 {
     try

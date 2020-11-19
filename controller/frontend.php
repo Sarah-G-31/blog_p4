@@ -22,3 +22,15 @@ function comments()
         require('view/frontend/commentView.php');
     }
 }
+
+function addComment($ticketId, $author, $comment)
+{
+    $affectedLines = postComment($ticketId, $author, $comment);
+
+    if ($affectedLines === false) {
+        die('Impossible d\'ajouter le commentaire !');
+    }
+    else {
+        header('Location: index.php?action=ticket&id=' . $ticketId);
+    }
+}

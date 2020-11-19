@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="public/css/style.css" />
-        <title>Mon Blog</title>
-    </head>
-    <body>
+<?php
+$title = 'Mon Blog !';
 
-        <h1><i>Erreur ! Cette page n'existe pas !</i></h1>
+ob_start(); ?>
 
-    </body>
-</html>
+<h1><i>Erreur ! Cette page n'existe pas !</i></h1>
+
+<?php
+$content = ob_get_clean();
+
+require('view/frontend/template.php');
+?>

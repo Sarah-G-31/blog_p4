@@ -13,6 +13,19 @@ if (isset($_GET['action'])) { // Pourquoi faire ?
             echo 'Erreur : aucun identifiant de billet envoyé';
         }
     }
+    elseif ($_GET['action'] == 'addComment') {
+        if (isset($_POST['id'])) { // if (isset($_GET['id']) && $_GET['id'] > 0) { Même question !!
+            if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+                addComment($_POST['id'], $_POST['author'], $_POST['comment']);
+            }
+            else {
+                echo 'Erreur : tous les champs ne sont pas remplis !';
+            }
+        }
+        else {
+            echo 'Erreur : aucun identifiant de billet envoyé';
+        }
+    }
 }
 else {
     tickets();

@@ -30,7 +30,19 @@ while($comment = $comments->fetch())
     </div><?php
 } 
 $comments->closeCursor();
+?>
 
+<form class="form_commentaire" action="index.php?action=addComment" method="post">
+<p>
+    <label type="text" id="auteur" name="auteur">Auteur</label>
+    <input type="text" id="auteur" name="author" value="<?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } ?>" required><br />
+    <input type="hidden" id="id_billet" name="id" value="<?php if(isset($_GET['id'])) echo $_GET['id']; ?>">
+    <textarea class="commentaire" id="commentaire" name="comment" rows="7" cols="30" required>votre message</textarea>
+    <input type="submit" value="Valider">
+</p>
+</form>
+
+<?php
 $content = ob_get_clean();
 
 require('view/frontend/template.php');
