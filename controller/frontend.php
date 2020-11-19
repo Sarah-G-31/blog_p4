@@ -15,7 +15,7 @@ function comments()
 
     if (empty($ticket['id']))
     { 
-        require('view/frontend/errorView.php');
+        throw new Exception('Ce billet n\'existe pas !');
     } 
     else 
     {
@@ -28,7 +28,8 @@ function addComment($ticketId, $author, $comment)
     $affectedLines = postComment($ticketId, $author, $comment);
 
     if ($affectedLines === false) {
-        die('Impossible d\'ajouter le commentaire !');
+        // Erreur gérée. Elle sera remontée jusqu'au bloc try du routeur !
+        throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
         header('Location: index.php?action=ticket&id=' . $ticketId);

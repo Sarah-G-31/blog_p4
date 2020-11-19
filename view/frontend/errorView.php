@@ -3,7 +3,7 @@ $title = 'Mon Blog !';
 
 ob_start(); ?>
 
-<h1><i>Erreur ! Cette page n'existe pas !</i></h1>
+<h1><i><?= $errorMessage ?></i></h1>
 
 <?php
 $content = ob_get_clean();
