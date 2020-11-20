@@ -7,6 +7,8 @@ ob_start(); ?>
 
 <h4>Derniers billets du blog :</h4>
 
+<div class="boutons"><?php include ('buttons.php'); ?></div>
+
 <?php
 // On lit et on affiche les entrées une à une grâce à une boucle
 while($data_tickets = $tickets->fetch()) 
@@ -28,5 +30,5 @@ $tickets->closeCursor();
 
 $content = ob_get_clean();
 
-require('view/frontend/template.php');
+require('template.php');
 ?>

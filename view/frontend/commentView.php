@@ -7,6 +7,8 @@ ob_start(); ?>
 
 <a href="index.php"><h4>Retour à la liste des billets</h4></a>
 
+<div class="boutons"><?php include ('buttons.php'); ?></div>
+
 <div class="news">
     <h3>
         <?= $ticket['title']; ?>
@@ -45,7 +47,7 @@ $comments->closeCursor();
 <?php
 $content = ob_get_clean();
 
-require('view/frontend/template.php');
+require('template.php');
 ?>
 
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('controller/frontend.php');
 
 try
@@ -30,6 +31,19 @@ try
                 // Autre exception
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
+        }
+        elseif ($_GET['action'] == 'connection')
+        {
+            if (isset($_POST['submit'])) {
+                connection();
+            }
+            else {
+                require('view/frontend/connectionView.php');
+            }
+        }
+        elseif ($_GET['action'] == 'disconnection')
+        {
+            disconnection();
         }
     }
     else {
