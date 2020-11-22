@@ -1,24 +1,23 @@
 <?php
-require_once('model/TicketManager.php');
+require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/ConnectionManager.php');
 
-function tickets()
-{
-    $ticketManager = new TicketManager(); // Création d'un objet
-    $tickets = $ticketManager->ticketsList(); // Appel d'une fonction de cet objet
+function posts() {
+    $postManager = new PostManager(); // Création d'un objet
+    $posts = $postManager->postsList(); // Appel d'une fonction de cet objet
 
-    require('view/frontend/ticketsListView.php');
+    require('view/frontend/postsListView.php');
 }
 
-function comments()
-{
-    $ticketManager = new TicketManager();
+function comments() {
+    $postManager = new PostManager();
     $commentManager = new CommentManager();
 
-    $ticket = $ticketManager->ticket($_GET['id']);
+    $post = $postManager->post($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
 
-    if (empty($ticket['id'])) { 
+    if (empty($post['id'])) { 
         throw new Exception('Ce billet n\'existe pas !');
     } 
     else {
@@ -26,23 +25,21 @@ function comments()
     }
 }
 
-function addComment($ticketId, $author, $comment)
-{
+function addComment($postId, $author, $comment) {
     $commentManager = new CommentManager();
-    $affectedLines = $commentManager->postComment($ticketId, $author, $comment);
+    $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
     if ($affectedLines === false) {
         // Erreur gérée. Elle sera remontée jusqu'au bloc try du routeur !
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-        header('Location: index.php?action=ticket&id=' . $ticketId);
+        header('Location: index.php?action=post&id=' . $postId);
     }
 }
 
-function connection()
-{
-    $erreurs = array();
+function connection() {
+    $errors = array();
     $input_value = array();
 
     // Contrôle du pseudo
@@ -51,58 +48,47 @@ function connection()
         $input_value['pseudo'][] = $pseudo;
     }
     else {
-        $erreurs['pseudo'][] = "Pseudo obligatoire";
+        $errors['pseudo'][] = "Pseudo obligatoire";
     }
 
     // Contrôle du mots de passe
-    $mdp = $_POST['mdp'];
-    if (empty($mdp)) {
-        $erreurs['mdp'][] = "Le mot de passe est obligatoire"; 
+    $password = $_POST['password'];
+    if (empty($password)) {
+        $errors['password'][] = "Le mot de passe est obligatoire"; 
     }
     
     $_SESSION["input_value"] = $input_value;
-    $_SESSION["erreurs"] = $erreurs;
+    $_SESSION["errors"] = $errors;
     header("location: index.php?action=connection");
 
-    if (count($erreurs) == 0) {
-        try
-        {
-            $bdd = new PDO('mysql:host=localhost;dbname=blog_p4_members_space;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        }
-        catch(Exception $e)
-        {
-            die('Erreur : '.$e->getMessage());
-        }
-        
-        $controle = $bdd->prepare('SELECT m.id id, m.id_groupe id_groupe, m.pass pass, g.utilisateur utilisateur FROM membres m LEFT JOIN groupes g ON g.id = m.id_groupe WHERE pseudo = :pseudo');
-        $controle->execute(array('pseudo' => $pseudo));
-        $donnees_controle = $controle->fetch();
+    if (count($errors) == 0) {
 
-        if (!$donnees_controle)
+        $connectionManager = new ConnectionManager();
+        $control = $connectionManager->connectionControl($pseudo);
+
+        if (!$control)
         {
-            $erreurs['mdp'][] = "Mauvais identifiant ou mot de passe !";
-            $_SESSION["erreurs"] = $erreurs;
+            $errors['password'][] = "Mauvais identifiant ou mot de passe !";
+            $_SESSION["errors"] = $errors;
             header("location: index.php?action=connection");
         }
-        else if (password_verify($mdp, $donnees_controle['pass']))
+        else if (password_verify($password, $control['password']))
         {
-            $_SESSION['id'] = $donnees_controle['id'];
-            $_SESSION['id_groupe'] = $donnees_controle['id_groupe'];
+            $_SESSION['id'] = $control['id'];
             $_SESSION['pseudo'] = $pseudo;
-            $_SESSION['utilisateur'] = $donnees_controle['utilisateur'];
+            $_SESSION['admin'] = $control['admin'];
             header("location: index.php");
         }
         else
         {
-            $erreurs['mdp'][] = "Mauvais identifiant ou mot de passe !";
-            $_SESSION["erreurs"] = $erreurs;
+            $errors['password'][] = "Mauvais identifiant ou mot de passe !";
+            $_SESSION["errors"] = $errors;
             header("location: index.php?action=connection");
         }        
     }
 }
 
-function disconnection()
-{
+function disconnection() {
     $_SESSION = array();
     session_destroy();
 

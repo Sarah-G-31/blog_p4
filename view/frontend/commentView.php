@@ -7,15 +7,15 @@ ob_start(); ?>
 
 <a href="index.php"><h4>Retour à la liste des billets</h4></a>
 
-<div class="boutons"><?php include ('buttons.php'); ?></div>
+<div class="buttons"><?php include ('buttons.php'); ?></div>
 
 <div class="news">
     <h3>
-        <?= $ticket['title']; ?>
-        <i> le <?= $ticket['date']; ?></i>
+        <?= $post['title']; ?>
+        <i> le <?= $post['date']; ?></i>
     </h3>
     <p class="news p">
-        <?= nl2br($ticket['content']); ?><br />
+        <?= nl2br($post['content']); ?><br />
     </p>
 </div>
 
@@ -24,7 +24,7 @@ ob_start(); ?>
 <?php
 while($comment = $comments->fetch())
 { ?>
-    <div class="texte">
+    <div class="text">
         <p><strong><?= $comment['author']; ?></strong> le <?= $comment['date']; ?></p>
         <p>
             <?= nl2br($comment['comment']); ?>
@@ -34,12 +34,12 @@ while($comment = $comments->fetch())
 $comments->closeCursor();
 ?>
 
-<form class="form_commentaire" action="index.php?action=addComment" method="post">
+<form class="comment_form" action="index.php?action=addComment" method="post">
 <p>
-    <label type="text" id="auteur" name="auteur">Auteur</label>
-    <input type="text" id="auteur" name="author" value="<?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } ?>" required><br />
-    <input type="hidden" id="id_billet" name="id" value="<?php if(isset($_GET['id'])) echo $_GET['id']; ?>">
-    <textarea class="commentaire" id="commentaire" name="comment" rows="7" cols="30" required>votre message</textarea>
+    <label type="text" id="author" name="author">Auteur</label>
+    <input type="text" id="author" name="author" value="<?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } ?>" required><br />
+    <input type="hidden" id="id" name="id" value="<?php if(isset($_GET['id'])) echo $_GET['id']; ?>">
+    <textarea class="comment" id="comment" name="comment" rows="7" cols="30" placeholder="votre message" required></textarea>
     <input type="submit" value="Valider">
 </p>
 </form>

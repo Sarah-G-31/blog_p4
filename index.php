@@ -2,13 +2,12 @@
 session_start();
 require('controller/frontend.php');
 
-try
-{
+try {
     if (isset($_GET['action'])) { // ici on demande ticket mais on pourait demander le login
-        if ($_GET['action'] == 'tickets') {
-            tickets();
+        if ($_GET['action'] == 'posts') {
+            posts();
         }
-        elseif ($_GET['action'] == 'ticket') {
+        elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) { // Pourquoi faire "$_GET['id'] > 0" vu qu'il y aura toujours un id
                 comments();
             } 
@@ -32,8 +31,7 @@ try
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
-        elseif ($_GET['action'] == 'connection')
-        {
+        elseif ($_GET['action'] == 'connection') {
             if (isset($_POST['submit'])) {
                 connection();
             }
@@ -41,13 +39,12 @@ try
                 require('view/frontend/connectionView.php');
             }
         }
-        elseif ($_GET['action'] == 'disconnection')
-        {
+        elseif ($_GET['action'] == 'disconnection') {
             disconnection();
         }
     }
     else {
-        tickets(); // action par défaut
+        posts(); // action par défaut
     }
 }
 catch(Exception $e) { // S'il y a eu une erreur, alors...
