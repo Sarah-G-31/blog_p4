@@ -20,7 +20,7 @@ ob_start(); ?>
         <input type="password" id="password" name="password" required ><span id="connection_errors"> <?php if (isset($errors["password"])) { echo $errors["password"][0]; }?></span><br /><br />
         <input class="submit_form" type="submit" name="submit" value="Connexion">
         <span>Pas encore de compte ?</span><br />
-        <a href="formulaire_inscription.php">Inscrivez-vous</a>
+        <a href="index.php?action=registration">Inscrivez-vous</a>
     </p>
 </form>
 

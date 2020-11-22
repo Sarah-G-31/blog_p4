@@ -3,15 +3,15 @@
 <?php
 if (isset($_SESSION['admin']) AND $_SESSION['admin'] == 0)
 { ?>
-    <input id="deconnexion" type="button" onclick="window.location.href='index.php?action=disconnection';" value="Deconnexion"><?php
+    <input id="disconnection" type="button" onclick="window.location.href='index.php?action=disconnection';" value="Deconnexion"><?php
 }
 if (isset($_SESSION['admin']) AND $_SESSION['admin'] == 1)
 { ?>
     <input id="admin" type="button" onclick="window.location.href='admin/admin.php';" value="Admin">
-    <input id="deconnexion" type="button" onclick="window.location.href='index.php?action=disconnection';" value="Deconnexion"><?php
+    <input id="disconnection" type="button" onclick="window.location.href='index.php?action=disconnection';" value="Deconnexion"><?php
 }
 if (empty($_SESSION['id']))
 { ?>
-    <input id="inscription" type="button" onclick="window.location.href='formulaire_inscription.php';" value="Inscription">
-    <input id="connexion" type="button" onclick="window.location.href='index.php?action=connection';" value="Connexion"><?php
+    <input id="registration" type="button" onclick="window.location.href='index.php?action=registration';" value="Inscription">
+    <input id="connection" type="button" onclick="window.location.href='index.php?action=connection';" value="Connexion"><?php
 }?>

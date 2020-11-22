@@ -31,6 +31,14 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
+        elseif ($_GET['action'] == 'registration') {
+            if (isset($_POST['submit'])) {
+                registration();
+            }
+            else {
+                require('view/frontend/registrationView.php');
+            }
+        }
         elseif ($_GET['action'] == 'connection') {
             if (isset($_POST['submit'])) {
                 connection();

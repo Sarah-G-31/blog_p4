@@ -44,27 +44,23 @@ h4
     right: 4px;
     vertical-align: top;
 }
-.billets
-{
-    margin-top: 100px;
-}
 #admin
 {
     width: auto;
     border: 1px solid black;
 }
-#inscription
+#registration
 {
     background-color: orange;
     width: 90px;
     border: 1px solid black;
 }
-#connexion
+#connection
 {
     width: 90px;
     border: 1px solid black;
 }
-#deconnexion
+#disconnection
 {
     width: 90px;
     border: 1px solid black;
@@ -87,12 +83,12 @@ h4
     padding-bottom: 5px;
     background-color:#CCCCCC;
 }
-.texte :nth-child(odd)
+.text :nth-child(odd)
 {
     background-color:rgb(97, 95, 95);
     color: white;
 }
-.texte p
+.text p
 {
     padding-left: 3px;
 }
@@ -109,7 +105,7 @@ a
     text-decoration: none;
     color: blue;
 }
-.form_inscription, .connection_form
+.registration_form, .connection_form
 {
     padding: 2.5% 0% 2.5% 0%;
     display: flex;
@@ -119,13 +115,13 @@ a
     opacity: 0.5;
 
 }
-.p_inscription, .connection_p
+.registration_p, .connection_p
 {
     margin: auto;
     padding: 5%;
     background-color: white;
 }
-.titre
+.title
 {
     text-align: center;
     margin-bottom: 15%;
@@ -150,7 +146,7 @@ a
     background-color: rgb(27, 125, 223);
     color: black;
 }
-#aideEmail, #connection_errors, #infoMdp1, #infoMdp2, #pseudo_help
+#email_help, #connection_errors, #password1_error, #password2_error, #pseudo_help
 {
     position: absolute;
     left: 16%;
