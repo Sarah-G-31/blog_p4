@@ -31,6 +31,19 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
+        elseif ($_GET['action'] == 'report') {
+            if (isset($_SESSION['admin'])) {
+                if (isset($_GET['comment'])) {
+                    report($_GET['comment']);
+                }
+                else {
+                    throw new Exception('Aucun identifiant !');
+                }
+            }
+            else {
+                throw new Exception('Vous devez être connecté pour signaler un commentaire !');
+            }
+        }
         elseif ($_GET['action'] == 'registration') {
             if (isset($_POST['submit'])) {
                 registration();

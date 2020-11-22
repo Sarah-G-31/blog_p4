@@ -1,6 +1,7 @@
 <?php
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/ReportManager.php');
 require_once('model/RegistrationManager.php');
 require_once('model/ConnectionManager.php');
 
@@ -37,6 +38,17 @@ function addComment($postId, $author, $comment) {
     else {
         header('Location: index.php?action=post&id=' . $postId);
     }
+}
+
+function report($commentId) {
+    $reportManager = new ReportManager();
+    $report = $reportManager->postReport($commentId);
+
+    $reportManager = new ReportManager();
+    $comment = $reportManager->getComment($commentId);
+
+    $url = $comment['id_posts'];
+    header("Location: index.php?action=post&id=$url");
 }
 
 function registration() {

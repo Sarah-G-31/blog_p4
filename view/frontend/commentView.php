@@ -28,6 +28,10 @@ while($comment = $comments->fetch())
         <p><strong><?= $comment['author']; ?></strong> le <?= $comment['date']; ?></p>
         <p>
             <?= nl2br($comment['comment']); ?>
+            <?php
+            if (isset($_SESSION['admin'])) { ?>
+                <input id="report" type="button" onclick="window.location.href='index.php?action=report&comment=<?= $comment['id']; ?>';" value="Signaler"><?php
+            } ?>
         </p>
     </div><?php
 } 
