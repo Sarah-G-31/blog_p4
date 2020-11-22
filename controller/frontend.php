@@ -1,6 +1,7 @@
 <?php
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/RegistrationManager.php');
 require_once('model/ConnectionManager.php');
 
 function posts() {
@@ -79,42 +80,27 @@ function registration() {
     header("location: index.php?action=registration");
 
     if (count($errors) == 0) {
+        $registrationManager = new RegistrationManager();
+        $pseudoControl = $registrationManager->getPseudo($pseudo);
 
-        try
-        {
-            $db = new PDO('mysql:host=localhost;dbname=blog_p4;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        }
-        catch(Exception $e)
-        {
-            die('Erreur : '.$e->getMessage());
-        }
-        
-        $controle_pseudo = $db->prepare('SELECT pseudo FROM members WHERE pseudo = ?');
-        $controle_pseudo->execute(array($pseudo));
-        $donnees_controle_pseudo = $controle_pseudo->fetch();
-
-        if (count($donnees_controle_pseudo['pseudo']) > 0 ) {
+        if (count($pseudoControl['pseudo']) > 0 ) {
             $errors['pseudo'][] = "Ce pseudo existe déjà";
             $_SESSION["errors"] = $errors;
-            $controle_pseudo->closeCursor();
             header("location: index.php?action=registration");
         }
     
-        $controle_email = $db->prepare('SELECT email FROM members WHERE email = ?');
-        $controle_email->execute(array($email));
-        $donnees_controle_email = $controle_email->fetch();
+        $registrationManager = new RegistrationManager();
+        $emailControl = $registrationManager->getEmail($email);
 
-        if (count($donnees_controle_email['email']) > 0 ) {
+        if (count($emailControl['email']) > 0 ) {
             $errors['email'][] = "Cet email est déjà enregistré";
             $_SESSION["errors"] = $errors;
-            $controle_email->closeCursor();
             header("location: index.php?action=registration");
         }
         
         if (count($errors) == 0) {
-            $req = $db->prepare('INSERT INTO members (pseudo, password, email, admin) VALUES (?, ?, ?, 0)');
-            $req->execute(array($pseudo, $hashed_password, $email));
-            
+            $registrationManager = new RegistrationManager();
+            $req = $registrationManager->addMember($pseudo, $hashed_password, $email);
             $req->closeCursor();
             session_destroy();
             header("Location: index.php?action=connection");
