@@ -7,7 +7,7 @@ h1, h2
     color: rgb(255, 0, 0);
     margin-bottom: -12px;
 }
-.titre
+.title
 {
     font-size: 200%;
     width: 15%;
@@ -18,7 +18,7 @@ h1, h2
     padding: 10px;
     background-color: rgb(233, 200, 16);
 }
-.bouton
+.button
 {
     margin: 15px 0px 60px 0px;
     padding: 30px;
@@ -29,7 +29,7 @@ h1, h2
     text-align: center;
     justify-content: space-around;
 }
-.bouton a
+.button a
 {
     width: 150px;
 }
@@ -57,7 +57,7 @@ a
     color: black;
     text-decoration: none;
 }
-.admin_quitter
+.closeAdmin
 {
     margin-left:92%;
     border: 1px solid black;

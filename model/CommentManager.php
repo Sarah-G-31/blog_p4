@@ -19,7 +19,7 @@ class CommentManager extends Manager
         $db = $this->dbConnect();
 
         $comments = $db->prepare('INSERT INTO comments (id_posts, author, comment, report) VALUES (?, ?, ?, 0)');
-        $affectedLines = $comments->execute(array($postId, $author, $comment));
+        $affectedLines = $comments->execute(array($postId, htmlspecialchars($author), htmlspecialchars($comment)));
 
         return $affectedLines;
     }

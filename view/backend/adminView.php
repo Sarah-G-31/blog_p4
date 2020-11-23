@@ -5,11 +5,11 @@ ob_start(); ?>
         
 <h1>Espace administrateur</h1>
 
-<input class="admin_quitter" type="button" onclick="window.location.href='index.php';" value="Quitter">
+<input class="closeAdmin" type="button" onclick="window.location.href='index.php';" value="Quitter">
 
-<div class="titre">Billets</div>
+<div class="title">Billets</div>
 
-<div class="bouton">
+<div class="button">
     <a href="index.php?admin=addPosts">Ajouter</a>
     <a href="index.php?admin=editPosts">Modifier</a>
     <a href="index.php?admin=deletePosts">Supprimer</a>

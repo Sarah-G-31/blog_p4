@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('controller/frontend.php');
+require('controller/backend.php');
 
 try {
     if (isset($_GET['action'])) { // ici on demande ticket mais on pourait demander le login
@@ -67,6 +68,25 @@ try {
     elseif (isset($_GET['admin']) && $_SESSION['admin'] == 1) {
         if ($_GET['admin'] == 'menu') {
             require('view/backend/adminView.php');
+        }
+        elseif ($_GET['admin'] == 'addPosts') {
+            if (isset($_POST['submit'])) {
+                if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                    addPosts($_POST['title'], $_POST['content']);
+                }
+                else {
+                    throw new Exception('Vous devez remplir tous les champs !');
+                }
+            }
+            else {
+                require('view/backend/addPostsView.php');
+            }
+        }
+        elseif ($_GET['admin'] == 'editPosts') {
+            require('view/backend/editPostsView.php');
+        }
+        elseif ($_GET['admin'] == 'deletePosts') {
+            require('view/backend/deletePostsView.php');
         }
         else {
             throw new Exception('Vous devez être administrateur pour accéder à cet espace !');
