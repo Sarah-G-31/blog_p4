@@ -7,7 +7,7 @@ if (isset($_SESSION['admin']) AND $_SESSION['admin'] == 0)
 }
 if (isset($_SESSION['admin']) AND $_SESSION['admin'] == 1)
 { ?>
-    <input id="admin" type="button" onclick="window.location.href='admin/admin.php';" value="Admin">
+    <input id="admin" type="button" onclick="window.location.href='index.php?admin=menu';" value="Admin">
     <input id="disconnection" type="button" onclick="window.location.href='index.php?action=disconnection';" value="Deconnexion"><?php
 }
 if (empty($_SESSION['id']))

@@ -64,6 +64,14 @@ try {
             disconnection();
         }
     }
+    elseif (isset($_GET['admin']) && $_SESSION['admin'] == 1) {
+        if ($_GET['admin'] == 'menu') {
+            require('view/backend/adminView.php');
+        }
+        else {
+            throw new Exception('Vous devez être administrateur pour accéder à cet espace !');
+        }
+    }
     else {
         posts(); // action par défaut
     }
