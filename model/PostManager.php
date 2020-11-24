@@ -25,9 +25,9 @@ class PostManager extends Manager
     public function postsPost($title, $content)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO posts (title, content) VALUES (?, ?)');
-        $req->execute(array(htmlspecialchars($title), htmlspecialchars($content)));
+        $posts = $db->prepare('INSERT INTO posts (title, content) VALUES (?, ?)');
+        $posts->execute(array(htmlspecialchars($title), htmlspecialchars($content)));
     
-        header('Location: index.php?admin=menu');
+        return $posts;
     }
 }

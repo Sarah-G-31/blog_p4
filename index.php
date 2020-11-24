@@ -65,7 +65,7 @@ try {
             disconnection();
         }
     }
-    elseif (isset($_GET['admin']) && $_SESSION['admin'] == 1) {
+    elseif (isset($_GET['admin']) && (isset($_SESSION['admin']) && $_SESSION['admin'] == 1)) {
         if ($_GET['admin'] == 'menu') {
             require('view/backend/adminView.php');
         }
@@ -83,7 +83,12 @@ try {
             }
         }
         elseif ($_GET['admin'] == 'editPosts') {
-            require('view/backend/editPostsView.php');
+            if (isset($_GET['id'])) {
+                editPosts($_GET['id']);
+            }
+            else {
+                posts();
+            }
         }
         elseif ($_GET['admin'] == 'deletePosts') {
             require('view/backend/deletePostsView.php');

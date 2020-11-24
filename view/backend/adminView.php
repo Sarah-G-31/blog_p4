@@ -7,7 +7,7 @@ ob_start(); ?>
 
 <input class="closeAdmin" type="button" onclick="window.location.href='index.php';" value="Quitter">
 
-<div class="title">Billets</div>
+<div class="title">Posts</div>
 
 <div class="button">
     <a href="index.php?admin=addPosts">Ajouter</a>

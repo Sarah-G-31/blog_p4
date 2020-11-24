@@ -9,7 +9,12 @@ function posts() {
     $postManager = new PostManager(); // Création d'un objet
     $posts = $postManager->postsList(); // Appel d'une fonction de cet objet
 
-    require('view/frontend/postsListView.php');
+    if (isset($_GET['admin'])) {
+        require('view/backend/postsListView.php');
+    }
+    else {
+        require('view/frontend/postsListView.php');
+    }
 }
 
 function comments() {
