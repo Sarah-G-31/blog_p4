@@ -23,16 +23,16 @@ function post($postId) {
     }
 }
 
-function editPost($id, $title, $content) {
+function editPost($postId, $title, $content) {
     $postManager = new PostManager();
-    $edit = $postManager->editPost($id, $title, $content);
+    $edit = $postManager->editPost($postId, $title, $content);
 
     header('Location: index.php?admin=editPosts');
 }
 
 function deletePost($postId) {
+    $postManager = new PostManager();
+    $delete = $postManager->deletePost($postId);
 
-    $retour_billet = $bdd->prepare('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date FROM billets WHERE id = :id');
-    $retour_billet->execute(array($postId));
-    $donnees_billets = $retour_billet->fetch();
+    header('Location: index.php?admin=deletePosts');
 }

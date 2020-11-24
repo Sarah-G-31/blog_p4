@@ -87,7 +87,7 @@ try {
                 post($_GET['id']);
             }
             elseif (isset($_POST['submit'])) {
-                editPosts($_POST['id'], $_POST['title'], $_POST['content']);
+                editPost($_POST['id'], $_POST['title'], $_POST['content']);
             }
             else {
                 posts();
@@ -98,7 +98,7 @@ try {
                 post($_GET['id']);
             }
             elseif (isset($_POST['submit'])) {
-               // deletePost($_POST['id']);
+                deletePost($_POST['id']);
             }
             else {
                 posts();
