@@ -14,7 +14,7 @@ h1, h2
     border: 2px solid black;
     border-radius: 20px;
     text-align: center;
-    margin: auto;
+    margin: 60px auto 10px;
     padding: 10px;
     background-color: rgb(233, 200, 16);
 }
@@ -57,28 +57,35 @@ a
     color: black;
     text-decoration: none;
 }
-.closeAdmin
+.buttons
 {
-    margin-left:92%;
+    display: inline-block;
+    position: absolute;
+    top: 80px;
+    right: 4px;
+    vertical-align: top;
+}
+.buttons input
+{
     border: 1px solid black;
 }
-.texte
+.text
 {
     margin: auto;
     width: 80%;
     padding-bottom: 5px;
     background-color:#CCCCCC;
 }
-.texte :nth-child(odd)
+.text :nth-child(odd)
 {
     background-color:rgb(97, 95, 95);
     color: white;
 }
-.texte p
+.text p
 {
     padding-left: 3px;
 }
-#annuler
+#cancel
 {
     float: right;
     margin-right: 10px;

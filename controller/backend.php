@@ -36,3 +36,10 @@ function deletePost($postId) {
 
     header('Location: index.php?admin=deletePosts');
 }
+
+function getReports() {
+    $commentManager = new CommentManager();
+    $reports = $commentManager->getReports();
+    
+    require('view/backend/adminView.php');
+}

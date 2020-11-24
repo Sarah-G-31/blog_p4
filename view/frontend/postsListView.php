@@ -4,9 +4,9 @@ ob_start(); ?>
 
 <h1>Mon super blog !</h1>
 
-<h4>Derniers billets du blog :</h4>
-
 <div class="buttons"><?php include ('buttons.php'); ?></div>
+
+<h4>Derniers billets du blog :</h4>
 
 <?php
 while($post = $posts->fetch()) 
