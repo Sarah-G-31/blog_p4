@@ -30,4 +30,13 @@ class PostManager extends Manager
     
         return $posts;
     }
+
+   public function editPost($id, $title, $content)
+   {
+        $db = $this->dbConnect();
+        $edit = $db->prepare('UPDATE posts SET title = ?, content = ? WHERE id = ?');
+        $edit->execute(array($title, $content, $id));
+
+        return $edit;
+   }
 }

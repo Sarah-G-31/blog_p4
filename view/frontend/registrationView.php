@@ -7,7 +7,6 @@ $input_value = $_SESSION["input_value"];
 }
 
 $title = 'Formulaire d\'inscription';
-
 ob_start();
 ?>
 
@@ -30,6 +29,5 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-
 require('template.php');
 ?>

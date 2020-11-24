@@ -1,6 +1,5 @@
 <?php
 $title = 'Mon Blog !';
-
 ob_start(); ?>
 
 <h1>Mon super blog !</h1>
@@ -50,7 +49,6 @@ $comments->closeCursor();
 
 <?php
 $content = ob_get_clean();
-
 require('template.php');
 ?>
 

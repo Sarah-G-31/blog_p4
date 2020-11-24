@@ -9,8 +9,11 @@ function posts() {
     $postManager = new PostManager(); // Création d'un objet
     $posts = $postManager->postsList(); // Appel d'une fonction de cet objet
 
-    if (isset($_GET['admin'])) {
-        require('view/backend/postsListView.php');
+    if ((isset($_GET['admin']) && $_GET['admin'] == 'editPosts') && (isset($_SESSION['admin']) && $_SESSION['admin'] == 1)) {
+        require('view/backend/editPostsListView.php');
+    }
+    elseif ((isset($_GET['admin']) && $_GET['admin'] == 'deletePosts') && (isset($_SESSION['admin']) && $_SESSION['admin'] == 1)) {
+        require('view/backend/deletePostsListView.php');
     }
     else {
         require('view/frontend/postsListView.php');

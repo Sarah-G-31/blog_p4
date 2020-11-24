@@ -1,27 +1,26 @@
 <?php
-$title = 'Mon Blog !';
+$title = 'Modifier un post';
 ob_start(); ?>
 
-<h1>Mon super blog !</h1>
+<h2>Modifier un post</h2>
 
-<h4>Derniers billets du blog :</h4>
-
-<div class="buttons"><?php include ('buttons.php'); ?></div>
+<a href="index.php?admin=menu"><h4>Retour au menu principal</h4></a>
 
 <?php
-while($post = $posts->fetch()) 
+while($post = $posts->fetch())
 {
 ?>
-    <div class="news">
+<div class="news">
+    <a href="index.php?admin=editPosts&amp;id=<?= $post['id']; ?>" >
         <h3>
             <?= $post['title']; ?>
             <i> le <?= $post['date']; ?></i>
         </h3>
         <p class="news p">
             <?= nl2br($post['content']); ?><br />
-            <a href="index.php?action=post&amp;id=<?= $post['id']; ?>"><i>Commentaires</i></a>
         </p><br />
-    </div>
+    </a>
+</div>
 <?php
 }
 $posts->closeCursor();

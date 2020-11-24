@@ -84,14 +84,25 @@ try {
         }
         elseif ($_GET['admin'] == 'editPosts') {
             if (isset($_GET['id'])) {
-                editPosts($_GET['id']);
+                post($_GET['id']);
+            }
+            elseif (isset($_POST['submit'])) {
+                editPosts($_POST['id'], $_POST['title'], $_POST['content']);
             }
             else {
                 posts();
             }
         }
         elseif ($_GET['admin'] == 'deletePosts') {
-            require('view/backend/deletePostsView.php');
+            if (isset($_GET['id'])) {
+                post($_GET['id']);
+            }
+            elseif (isset($_POST['submit'])) {
+               // deletePost($_POST['id']);
+            }
+            else {
+                posts();
+            }
         }
         else {
             throw new Exception('Vous devez être administrateur pour accéder à cet espace !');

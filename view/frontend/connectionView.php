@@ -7,7 +7,6 @@ $input_value = $_SESSION["input_value"];
 }
 
 $title = 'Connexion';
-
 ob_start(); ?>
 
 <h1>Connexion</h1>
@@ -26,6 +25,5 @@ ob_start(); ?>
 
 <?php
 $content = ob_get_clean();
-
 require('template.php');
 ?>
