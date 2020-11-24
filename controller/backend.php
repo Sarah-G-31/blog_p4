@@ -40,6 +40,20 @@ function deletePost($postId) {
 function getReports() {
     $commentManager = new CommentManager();
     $reports = $commentManager->getReports();
-    
+
     require('view/backend/adminView.php');
+}
+
+function deleteComment($commentId) {
+    $commentManager = new CommentManager();
+    $delete = $commentManager->deleteComment($commentId);
+
+    header('Location: index.php?admin=menu');
+}
+
+function cancelReport($commentId) {
+    $commentManager = new CommentManager();
+    $cancel = $commentManager->cancelReport($commentId);
+
+    header('Location: index.php?admin=menu');
 }

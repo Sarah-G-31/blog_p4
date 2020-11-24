@@ -104,6 +104,22 @@ try {
                 posts();
             }
         }
+        elseif ($_GET['admin'] == 'deleteComment') {
+            if (isset($_GET['id'])) {
+                deleteComment($_GET['id']);
+            }
+            else {
+                throw new Exception('Aucun identifiant de commentaire envoyé');
+            }
+        }
+        elseif ($_GET['admin'] == 'cancelReport') {
+            if (isset($_GET['id'])) {
+                cancelReport($_GET['id']);
+            }
+            else {
+                throw new Exception('Aucun identifiant de commentaire envoyé');
+            }
+        }
         else {
             throw new Exception('Vous devez être administrateur pour accéder à cet espace !');
         }

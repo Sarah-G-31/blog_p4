@@ -30,4 +30,24 @@ class CommentManager extends Manager
 
         return $reports;
     }
+
+    public function deleteComment($commentId)
+    {
+        $message = "Message supprimé car son contenu ne correspond pas aux conformités de notre forum.";
+
+        $db = $this->dbConnect();
+        $delete = $db->prepare('UPDATE comments SET comment = ?, report = 0 WHERE id = ?');
+        $delete->execute(array($message, $commentId));
+    
+        return $delete;
+    }
+
+    public function cancelReport($commentId)
+    {
+        $db = $this->dbConnect();
+        $cancel = $db->prepare('UPDATE comments SET report = 0 WHERE id = ?');
+        $cancel->execute(array($commentId));
+    
+        return $cancel;
+    }
 }
