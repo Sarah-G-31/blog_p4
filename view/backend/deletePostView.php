@@ -19,8 +19,8 @@ ob_start(); ?>
 <form action="index.php?admin=deletePosts" method="post">
     <div class="news">Êtes vous sur de vouloir supprimer ce post ?
         <input type="hidden" type="id" name="id" value="<?= $post['id'] ?>">
-        <input type="submit" name="submit" value="oui"> / 
-        <input type="button" value="non" onclick="window.location.href='index.php?admin=deletePosts';">
+        <input class="yes" type="submit" name="submit" value="oui"> / 
+        <a class="no" href='index.php?admin=deletePosts'>non</a>
     </div><br />
 </form>
 

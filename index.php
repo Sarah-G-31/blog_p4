@@ -18,9 +18,9 @@ try {
             }
         }
         elseif ($_GET['action'] == 'addComment') {
-            if (isset($_POST['id'])) { // if (isset($_GET['id']) && $_GET['id'] > 0) { Même question !!
-                if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                    addComment($_POST['id'], $_POST['author'], $_POST['comment']);
+            if (isset($_POST['submit'])) { // if (isset($_GET['id']) && $_GET['id'] > 0) { Même question !!
+                if (!empty($_POST['idPost']) && !empty($_POST['idMember']) && !empty($_POST['comment'])) {
+                    addComment($_POST['idPost'], $_POST['idMember'], $_POST['comment']);
                 }
                 else {
                     // Autre exception
@@ -87,7 +87,12 @@ try {
                 post($_GET['id']);
             }
             elseif (isset($_POST['submit'])) {
-                editPost($_POST['id'], $_POST['title'], $_POST['content']);
+                if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                    editPost($_POST['id'], $_POST['title'], $_POST['content']);
+                }
+                else {
+                    throw new Exception('Vous devez remplir tous les champs !');
+                }
             }
             else {
                 posts();

@@ -41,16 +41,33 @@ h3
     font-size:0.9em;
     margin-bottom:0px;
 }
-.news p
-{
-    width: auto;
-    background-color:#CCCCCC;
-    margin-top:0px;
-}
 .news
 {
     width:70%;
     margin:auto;
+}
+.news p
+{
+    width: auto;
+   /* background-color:#CCCCCC;*/
+    margin-top: 0px;
+    text-align: center;
+}
+.news p input
+{
+    text-align: left;
+}
+.yes, .no, .validate, .cancel
+{
+    background-color: rgb(231, 228, 228);
+    color: black;
+    padding: 2px 7px;
+    border: 1px solid black;
+    display: inline-block;
+    font-family: arial;
+    font-size: 13px;
+    cursor: default;
+    border-radius: 2px;
 }
 a
 {
@@ -65,8 +82,12 @@ a
     right: 4px;
     vertical-align: top;
 }
-.buttons input
+.buttons a
 {
+    background-color: rgb(97, 95, 95);
+    color: white;
+    padding: 7px 10px;
+    display: inline-block;
     border: 1px solid black;
 }
 .text
@@ -75,12 +96,12 @@ a
     width: 80%;
     padding-bottom: 5px;
     background-color:#CCCCCC;
-}
+}/*
 .text :nth-child(odd)
 {
     background-color:rgb(97, 95, 95);
     color: white;
-}
+}*/
 .text p
 {
     padding-left: 3px;
@@ -88,6 +109,7 @@ a
 #cancel
 {
     float: right;
+    padding: 2px 5px;
     margin-right: 10px;
     border: 1px solid black;
     background-color:rgb(97, 95, 95);
@@ -96,6 +118,7 @@ a
 #delete
 {
     float: right;
+    padding: 2px 5px;
     margin-right: 10px;
     border: 1px solid black;
     background-color: red;

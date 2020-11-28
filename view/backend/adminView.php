@@ -25,8 +25,8 @@ while($report = $reports->fetch())
         </p>
         <p>
             <?= nl2br($report['comment']); ?>
-            <input id="delete" type="button" onclick="window.location.href='index.php?admin=deleteComment&id=<?= $report['id']; ?>';" value="Supprimer">
-            <input id="cancel" type="button" onclick="window.location.href='index.php?admin=cancelReport&id=<?= $report['id']; ?>';" value="Annuler">
+            <a id="delete" href='index.php?admin=deleteComment&id=<?= $report['id']; ?>'>Supprimer</a>
+            <a id="cancel" href='index.php?admin=cancelReport&id=<?= $report['id']; ?>'>Annuler</a>
         </p>
     </div>
 <?php

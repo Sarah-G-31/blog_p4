@@ -6,8 +6,6 @@ ob_start(); ?>
 
 <a href="index.php"><h4>Retour à la liste des billets</h4></a>
 
-<div class="buttons"><?php include ('buttons.php'); ?></div>
-
 <div class="news">
     <h3>
         <?= $post['title']; ?>
@@ -29,7 +27,7 @@ while($comment = $comments->fetch())
             <?= nl2br($comment['comment']); ?>
             <?php
             if (isset($_SESSION['admin'])) { ?>
-                <input id="report" type="button" onclick="window.location.href='index.php?action=report&comment=<?= $comment['id']; ?>';" value="Signaler"><?php
+                <a id="report" href='index.php?action=report&comment=<?= $comment['id']; ?>'>Signaler</a><?php
             } ?>
         </p>
     </div><?php
@@ -40,10 +38,11 @@ $comments->closeCursor();
 <form class="comment_form" action="index.php?action=addComment" method="post">
 <p>
     <label type="text" id="author" name="author">Auteur</label>
-    <input type="text" id="author" name="author" value="<?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } ?>" required><br />
-    <input type="hidden" id="id" name="id" value="<?php if(isset($_GET['id'])) echo $_GET['id']; ?>">
+    <input type="text" value="<?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } ?>" required><br />
+    <input type="hidden" id="idPost" name="idPost" value="<?php if (isset($_GET['id'])) echo $_GET['id']; ?>">
+    <input type="hidden" id="idMember" name="idMember" value="<?php if (isset($_SESSION['id'])) { echo $_SESSION['id']; } ?>">
     <textarea class="comment" id="comment" name="comment" rows="7" cols="30" placeholder="votre message" required></textarea>
-    <input type="submit" value="Valider">
+    <input type="submit" name="submit" value="Valider">
 </p>
 </form>
 

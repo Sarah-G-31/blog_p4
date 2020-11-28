@@ -10,14 +10,14 @@ ob_start(); ?>
     <form action="index.php?admin=editPosts" method="post">
         <p>
             <h3>Titre :<br />
-                <textarea id="title" name="title" rows="1" cols="144" required><?= $post['title']; ?></textarea>
+                <textarea id="title" type="textarea" id="title" name="title"><?= $post['title']; ?></textarea>
             </h3>
             <p class="news p">
                 <label for="contenu">Message : </label><br />
-                <textarea id="content" name="content" rows="7" cols="144" required><?= $post['content']; ?></textarea><br />
+                <textarea id="content" name="content" rows="35"><?= $post['content']; ?></textarea>
                 <input type="hidden" id="id" name="id" value="<?= $post['id']; ?>">
-                <input  type="submit" name="submit" value="Valider">
-                <input type="button" value="Annuler" onclick="window.location.href='index.php?admin=editPosts';">
+                <input class="validate" type="submit" name="submit" value="Valider">
+                <a class="cancel" href='index.php?admin=editPosts'>Annuler</a>
             </p>
         </p>
     </form>
