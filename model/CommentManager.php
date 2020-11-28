@@ -25,7 +25,7 @@ class CommentManager extends Manager
     public function getReports()
     {
         $db = $this->dbConnect();
-        $reports = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS date FROM comments WHERE report = 1');
+        $reports = $db->prepare('SELECT com.id id, mem.pseudo author, com.comment comment, DATE_FORMAT(com.comment_date, \'%d/%m/%Y à %Hh%imin%ss\') date FROM comments com LEFT JOIN members mem ON mem.id=com.author WHERE report = 1');
         $reports->execute();
 
         return $reports;

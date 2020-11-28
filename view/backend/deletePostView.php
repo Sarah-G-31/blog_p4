@@ -4,7 +4,7 @@ ob_start(); ?>
 
 <h1 class="warning">Attention cette opération est irréversible</h1>
 
-<a href="index.php?admin=deletePosts"><h4>Retour au menu précédent</h4></a>
+<a href="index.php?admin=menu"><h4>Retour au menu précédent</h4></a>
 
 <div class="news">
     <h3>
@@ -20,7 +20,7 @@ ob_start(); ?>
     <div class="news">Êtes vous sur de vouloir supprimer ce post ?
         <input type="hidden" type="id" name="id" value="<?= $post['id'] ?>">
         <input class="yes" type="submit" name="submit" value="oui"> / 
-        <a class="no" href='index.php?admin=deletePosts'>non</a>
+        <a class="no" href='index.php?admin=menu'>non</a>
     </div><br />
 </form>
 

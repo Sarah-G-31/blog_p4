@@ -6,18 +6,10 @@ require_once('model/RegistrationManager.php');
 require_once('model/ConnectionManager.php');
 
 function posts() {
-    $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->postsList(); // Appel d'une fonction de cet objet
+    $postManager = new PostManager();
+    $posts = $postManager->postsList();
 
-    if ((isset($_GET['admin']) && $_GET['admin'] == 'editPosts') && (isset($_SESSION['admin']) && $_SESSION['admin'] == 1)) {
-        require('view/backend/editPostsListView.php');
-    }
-    elseif ((isset($_GET['admin']) && $_GET['admin'] == 'deletePosts') && (isset($_SESSION['admin']) && $_SESSION['admin'] == 1)) {
-        require('view/backend/deletePostsListView.php');
-    }
-    else {
-        require('view/frontend/postsListView.php');
-    }
+    require('view/frontend/postsListView.php');
 }
 
 function comments() {

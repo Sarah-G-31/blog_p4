@@ -18,20 +18,20 @@ h1, h2
     padding: 10px;
     background-color: rgb(233, 200, 16);
 }
-.button
+.add
 {
-    margin: 15px 0px 60px 0px;
-    padding: 30px;
-    font-size: 200%;
-    border: 2px solid black;
-    border-radius: 20px;
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
+    float: left;
+    padding: 2px 5px;
+    border: 1px solid black;
+    background-color:rgb(97, 95, 95);
+    cursor: default;
+    color: white;
 }
-.button a
+.newsButtons
 {
-    width: 150px;
+    display: inline-block;
+    position: absolute;
+    right: 4px;
 }
 h3
 {
@@ -106,13 +106,14 @@ a
 {
     padding-left: 3px;
 }
-#cancel
+#cancel, #edit
 {
     float: right;
     padding: 2px 5px;
     margin-right: 10px;
     border: 1px solid black;
     background-color:rgb(97, 95, 95);
+    cursor: default;
     color: white;
 }
 #delete
@@ -122,5 +123,6 @@ a
     margin-right: 10px;
     border: 1px solid black;
     background-color: red;
+    cursor: default;
     color: black;
 }

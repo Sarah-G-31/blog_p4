@@ -7,13 +7,31 @@ ob_start(); ?>
 
 <div class="title">Posts</div>
 
-<div class="button">
-    <a href="index.php?admin=addPosts">Ajouter</a>
-    <a href="index.php?admin=editPosts">Modifier</a>
-    <a href="index.php?admin=deletePosts">Supprimer</a>
-</div>
+<a class="add" href="index.php?admin=addPosts">Ajouter</a>
 
-<div class="title">Commentaires</div>
+<?php
+while($post = $posts->fetch())
+{
+?>
+<div class="news">
+    <div class="newsButtons">
+        <a id="delete" href="index.php?admin=deletePosts&amp;id=<?= $post['id']; ?>">Supprimer</a>
+        <a id="edit" href="index.php?admin=editPosts&amp;id=<?= $post['id']; ?>">Modifier</a>
+    </div>
+    <h3>
+        <?= $post['title']; ?>
+        <i> le <?= $post['date']; ?></i>
+    </h3>
+    <p class="news p">
+        <?= nl2br($post['content']); ?><br />
+    </p>
+</div>
+<?php
+}
+$posts->closeCursor();
+?>
+
+<div class="title">Signalements</div>
 
 <?php
 while($report = $reports->fetch())
