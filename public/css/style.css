@@ -5,7 +5,7 @@ html
 body
 {
     width: auto;
-    min-height: 95%;
+    min-height: 97%;
     position: relative;
     background-image: url("../images/alaska.jpg");
     background-attachment:fixed;
@@ -14,7 +14,6 @@ body
 }
 body header
 {
-
     width: 100%;
     height: 45px;
     position: fixed;
@@ -159,14 +158,22 @@ a
 }
 #email_help, #connection_errors, #password1_error, #password2_error, #pseudo_help
 {
-
     color:red;
 }
 .commentForm
 {
-    width: 80%;
-    margin: auto;
-    vertical-align: bottom;
+    width: 50%;
+    margin: 10px auto;
+    padding: 1px 10px;
+    opacity: 80%;
+    background-color: rgb(136, 136, 185);
+}
+.commentForm p
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
 }
 .postComment
 {
@@ -176,12 +183,12 @@ a
 }
 body footer
 {
-    width: 100%;
+    width: 101%;
     display: flex;
     position: absolute;
-    left: 0px;
+    left: -7px;
     bottom: 0px;
     justify-content: space-around;
-    background-color: grey;
+    background-color: #808080bb;
     padding-top: 15px;
 }
