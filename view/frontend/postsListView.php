@@ -10,7 +10,7 @@ ob_start(); ?>
 while($post = $posts->fetch()) 
 {
 ?>
-    <div class="news">
+    <div class="posts">
         <h3>
             <?= $post['title']; ?>
         </h3>

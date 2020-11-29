@@ -6,9 +6,9 @@ ob_start(); ?>
 
 <a href="index.php"><h4>Retour à la liste des billets</h4></a>
 
-<div class="news">
+<div class="posts">
     <i> le <?= $post['date']; ?></i>
-    <p class="test">
+    <p>
         <?= $post['content']; ?><br />
     </p>
 </div>
@@ -32,7 +32,7 @@ while($comment = $comments->fetch())
 $comments->closeCursor();
 ?>
 
-<form class="postCommentForm" action="index.php?action=addComment" method="post">
+<form class="commentForm" action="index.php?action=addComment" method="post">
 <p>
     <input type="text" placeholder="Pseudo" value="<?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) { echo $_SESSION['pseudo']; } ?>" required><br />
     <input type="hidden" id="idPost" name="idPost" value="<?php if (isset($_GET['id'])) echo $_GET['id']; ?>">
