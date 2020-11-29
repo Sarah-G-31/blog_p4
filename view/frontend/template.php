@@ -28,9 +28,11 @@
             </div>
         </header>
 
+        <div class="content">
         <?= $content ?>
+        </div>
 
-        <footer class="footer">
+        <footer>
             <nav>
                 Plan du site
                 <ul>

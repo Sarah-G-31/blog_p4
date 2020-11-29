@@ -1,5 +1,5 @@
 <?php
-$title = 'Mon Blog !';
+$title = 'Billet simple pour l\'Alaska';
 ob_start(); ?>
 
 <h1>Billet simple pour l'Alaska</h1>
