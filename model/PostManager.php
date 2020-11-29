@@ -26,7 +26,7 @@ class PostManager extends Manager
     {
         $db = $this->dbConnect();
         $posts = $db->prepare('INSERT INTO posts (title, content) VALUES (?, ?)');
-        $posts->execute(array($title, $content)); //(htmlspecialchars($title), htmlspecialchars($content))
+        $posts->execute(array($title, $content));
     
         return $posts;
     }

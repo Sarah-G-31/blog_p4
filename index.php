@@ -4,38 +4,35 @@ require('controller/frontend.php');
 require('controller/backend.php');
 
 try {
-    if (isset($_GET['action'])) { // ici on demande ticket mais on pourait demander le login
+    if (isset($_GET['action'])) {
         if ($_GET['action'] == 'posts') {
             posts();
         }
         elseif ($_GET['action'] == 'post') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) { // Pourquoi faire "$_GET['id'] > 0" vu qu'il y aura toujours un id
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
                 comments();
             } 
             else {
-                // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
         elseif ($_GET['action'] == 'addComment') {
-            if (isset($_POST['submit'])) { // if (isset($_GET['id']) && $_GET['id'] > 0) { Même question !!
+            if (isset($_POST['submit'])) {
                 if (!empty($_POST['idPost']) && !empty($_POST['idMember']) && !empty($_POST['comment'])) {
                     addComment($_POST['idPost'], $_POST['idMember'], $_POST['comment']);
                 }
                 else {
-                    // Autre exception
-                    throw new Exception('Tous les champs ne sont pas remplis !');
+                    throw new Exception('Vous devez être connecté pour poster un commentaire !');
                 }
             }
             else {
-                // Autre exception
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
         elseif ($_GET['action'] == 'report') {
             if (isset($_SESSION['admin'])) {
-                if (isset($_GET['comment'])) {
-                    report($_GET['comment']);
+                if (isset($_GET['post']) && isset($_GET['comment'])) {
+                    report($_GET['post'], $_GET['comment']);
                 }
                 else {
                     throw new Exception('Aucun identifiant !');
@@ -130,10 +127,10 @@ try {
         }
     }
     else {
-        posts(); // action par défaut
+        posts();
     }
 }
-catch(Exception $e) { // S'il y a eu une erreur, alors...
+catch(Exception $e) {
     $errorMessage = $e->getMessage();
     require('view/frontend/errorView.php');
 }

@@ -12,7 +12,7 @@ ob_start(); ?>
             <h3>Titre :<br />
                 <textarea id="title" type="textarea" id="title" name="title"><?= $post['title']; ?></textarea>
             </h3>
-            <p class="news p">
+            <p>
                 <label for="contenu">Message : </label><br />
                 <textarea id="content" name="content" rows="35"><?= $post['content']; ?></textarea>
                 <input type="hidden" id="id" name="id" value="<?= $post['id']; ?>">

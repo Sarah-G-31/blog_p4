@@ -1,9 +1,7 @@
 <?php
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
-require_once('model/ReportManager.php');
-require_once('model/RegistrationManager.php');
-require_once('model/ConnectionManager.php');
+require_once('model/MemberManager.php');
 
 function posts() {
     $postManager = new PostManager();
@@ -32,7 +30,6 @@ function addComment($postId, $memberId, $comment) {
     $affectedLines = $commentManager->postComment($postId, $memberId, $comment);
 
     if ($affectedLines === false) {
-        // Erreur gérée. Elle sera remontée jusqu'au bloc try du routeur !
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
@@ -40,15 +37,11 @@ function addComment($postId, $memberId, $comment) {
     }
 }
 
-function report($commentId) {
-    $reportManager = new ReportManager();
-    $report = $reportManager->postReport($commentId);
+function report($postId, $commentId) {
+    $commentManager = new CommentManager();
+    $report = $commentManager->postReport($commentId);
 
-    $reportManager = new ReportManager();
-    $comment = $reportManager->getComment($commentId);
-
-    $url = $comment['id_posts'];
-    header("Location: index.php?action=post&id=$url");
+    header("Location: index.php?action=post&id=$postId");
 }
 
 function registration() {
@@ -92,8 +85,8 @@ function registration() {
     header("location: index.php?action=registration");
 
     if (count($errors) == 0) {
-        $registrationManager = new RegistrationManager();
-        $pseudoControl = $registrationManager->getPseudo($pseudo);
+        $MemberManager = new MemberManager();
+        $pseudoControl = $MemberManager->getPseudo($pseudo);
 
         if (count($pseudoControl['pseudo']) > 0 ) {
             $errors['pseudo'][] = "Ce pseudo existe déjà";
@@ -101,8 +94,8 @@ function registration() {
             header("location: index.php?action=registration");
         }
     
-        $registrationManager = new RegistrationManager();
-        $emailControl = $registrationManager->getEmail($email);
+        $MemberManager = new MemberManager();
+        $emailControl = $MemberManager->getEmail($email);
 
         if (count($emailControl['email']) > 0 ) {
             $errors['email'][] = "Cet email est déjà enregistré";
@@ -111,8 +104,8 @@ function registration() {
         }
         
         if (count($errors) == 0) {
-            $registrationManager = new RegistrationManager();
-            $req = $registrationManager->addMember($pseudo, $hashed_password, $email);
+            $MemberManager = new MemberManager();
+            $req = $MemberManager->addMember($pseudo, $hashed_password, $email);
             $req->closeCursor();
             session_destroy();
             header("Location: index.php?action=connection");
@@ -146,8 +139,8 @@ function connection() {
 
     if (count($errors) == 0) {
 
-        $connectionManager = new ConnectionManager();
-        $control = $connectionManager->connectionControl($pseudo);
+        $MemberManager = new MemberManager();
+        $control = $MemberManager->connectionControl($pseudo);
 
         if (!$control)
         {

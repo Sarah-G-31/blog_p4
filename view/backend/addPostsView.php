@@ -11,7 +11,7 @@ ob_start(); ?>
         <h3>Titre :<br />
             <textarea id="title" type="textarea" id="title" name="title"></textarea>
         </h3>
-        <p class="news p">
+        <p>
             <label id="test" for="content">Contenu : </label><br />
             <textarea id="content" name="content"rows="35"></textarea>
             <input type="submit" name="submit" value="Valider">

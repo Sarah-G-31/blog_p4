@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title><?= $title ?></title>
         <script type="text/javascript" src="public/js/tinymce/tinymce.min.js"></script>
+    <!--
         <script type="text/javascript">
         tinymce.init({
             selector: 'textarea#title',
@@ -13,6 +14,7 @@
             menubar:false,
             statusbar: false,
         });
+    -->
         </script>
         <script type="text/javascript">
         tinymce.init({
