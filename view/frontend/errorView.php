@@ -1,10 +1,10 @@
 <?php
 $title = 'Mon Blog !';
-ob_start(); ?>
 
-<h1><i><?= $errorMessage ?></i></h1>
+ob_start();
 
-<?php
+$h1 = $errorMessage;
+
 $content = ob_get_clean();
 require('view/frontend/template.php');
 ?>

@@ -163,7 +163,7 @@ a
 .commentForm
 {
     width: 50%;
-    margin: 10px auto;
+    margin: 20px auto 10px;
     padding: 1px 10px;
     opacity: 80%;
     background-color: rgb(136, 136, 185);
@@ -192,3 +192,35 @@ body footer
     background-color: #808080bb;
     padding-top: 15px;
 }
+
+/*------TABLETTE------*/
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+    #name 
+    {
+        font-size: 29px;
+    }
+
+    h1
+    {
+        font-size: 29px;
+        padding-top: 5px;
+    }
+    
+    body footer 
+    {
+        left: -4px;
+        right: -4px;
+    }
+}
+
+/*------MOBILE------*/
+@media (max-width: 767px) 
+{
+    #name 
+    {
+        font-size: 15px;
+        top: 13px;
+    }
+}
+

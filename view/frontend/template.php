@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?= $title ?></title>
         <link href="public/css/style.css" rel="stylesheet" /> 
     </head>
@@ -9,7 +10,7 @@
     <body>
         <header class="header">
             <div id="name">Jean Forteroche</div>
-            
+            <h1><?= $h1 ?></h1>
             <div class="buttons">
                 <?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['pseudo']; } ?>
                 

@@ -7,10 +7,10 @@ $input_value = $_SESSION["input_value"];
 }
 
 $title = 'Formulaire d\'inscription';
+
+$h1 = 'Inscription';
 ob_start();
 ?>
-
-<h1>Inscription</h1>
 
 <form class="registrationForm" action="index.php?action=registration" method="post">
     <p>

@@ -7,9 +7,9 @@ $input_value = $_SESSION["input_value"];
 }
 
 $title = 'Connexion';
-ob_start(); ?>
 
-<h1>Connexion</h1>
+$h1 = $title;
+ob_start(); ?>
 
 <form class="connectionForm" action="index.php?action=connection" method="post">
    <p>

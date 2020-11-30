@@ -1,8 +1,8 @@
 <?php
-$title = 'Mon Blog !';
-ob_start(); ?>
+$title = 'Billet simple pour l\'Alaska';
 
-<h1><?= $post['title']; ?></h1>
+$h1 = $post['title'];
+ob_start(); ?>
 
 <a href="index.php"><h4>Retour à la liste des billets</h4></a>
 
