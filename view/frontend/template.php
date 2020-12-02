@@ -8,12 +8,10 @@
     </head>
         
     <body>
-        <header class="header">
+        <header>
             <div id="name">Jean Forteroche</div>
             <h1><?= $h1 ?></h1>
             <div class="buttons">
-                <?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['pseudo']; } ?>
-                
                 <?php
                 if (isset($_SESSION['admin']) AND $_SESSION['admin'] == 0) { ?>
                     <a id="disconnection" href='index.php?action=disconnection'>Déconnexion</a><?php
@@ -27,6 +25,9 @@
                     <a id="registration" href='index.php?action=registration'>Inscription</a><?php
                 }?>
             </div>
+            <p class="hello" >
+                <?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['pseudo']; } ?>
+            </p>
         </header>
 
         <div class="content">

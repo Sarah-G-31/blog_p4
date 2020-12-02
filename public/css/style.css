@@ -10,6 +10,7 @@ body
     background-image: url("../images/alaska.jpg");
     background-attachment:fixed;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 body header
@@ -26,7 +27,7 @@ body header
     position: fixed;
     font-size: 30px;
     top: 5px;
-    left: 20px; 
+    left: 10px; 
 }
 h1
 {
@@ -47,7 +48,7 @@ h3
 }
 h4
 {
-    width: 15%;
+    width: 200px;
     text-align: center;
 }
 .buttons
@@ -55,7 +56,14 @@ h4
     vertical-align: top;
     position: fixed;
     top: 12px;
-    right: 20px;
+    right: 10px;
+    text-align: center;
+}
+.hello
+{
+    position: fixed;
+    top: 30px;
+    right: 7px;
 }
 #registration
 {
@@ -74,7 +82,7 @@ h4
 .content
 {
     padding-top: 30px;
-    padding-bottom: 130px;
+    padding-bottom: 50px;
 }
 .posts
 {
@@ -183,9 +191,9 @@ a
 }
 body footer
 {
-    width: 101%;
+    width: 100%;
     display: flex;
-    position: absolute;
+    /*position: absolute;*/
     left: -7px;
     bottom: 0px;
     justify-content: space-around;
@@ -200,27 +208,105 @@ body footer
     {
         font-size: 29px;
     }
-
     h1
     {
-        font-size: 29px;
-        padding-top: 5px;
+        font-size: 27px;
+        padding-top: 10px;
+    }
+    h4 
+    {
+        width: 200px;
     }
     
-    body footer 
+    /*body footer 
     {
         left: -4px;
         right: -4px;
+    }*/
+}
+
+@media (min-width: 500px) and (max-width: 768px)
+{
+    #name 
+    {
+        font-size: 20px;
+        top: 0px;
+        left: 2px;
+        width: 70px;
+        text-align: center;
+    }
+    h1
+    {
+        font-size: 22px;
+        padding-top: 17px;
+    }
+    .buttons
+    {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 2px;
+        right: 2px;
+    }
+    h4 
+    {
+        width: 150px;
+        font-size: 13px;
     }
 }
 
 /*------MOBILE------*/
-@media (max-width: 767px) 
+@media (max-width: 500px) 
 {
+    body header
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     #name 
     {
-        font-size: 15px;
-        top: 13px;
+        font-size: 18px;
+        top: 0px;
+        left: 2px;
+        width: 70px;
+        text-align: center;
+    }
+    h1
+    {
+        
+        display: none;
+    }
+    .buttons
+    {
+        width: 100px;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 2px;
+        right: 0px;
+    }
+    #admin, #connection, #disconnection, #registration
+    {
+        padding: 0px;
+    }
+    .hello
+    {
+        display: none;
+    }
+    h4 
+    {
+        width: 200px;
+        font-size: 12px;
+    }
+    body footer 
+    {
+        flex-wrap: wrap;
+        text-align: center;
+        padding-top: 0;
+        left: auto;
+        right: auto;
+        width: 100%;
     }
 }
 
