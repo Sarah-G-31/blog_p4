@@ -10,6 +10,7 @@
     <body>
         <header>
             <div id="name">Jean Forteroche</div>
+            <a type="button" id="home" title="Acceuil" href="index.php"></a>
             <h1><?= $h1 ?></h1>
             <div class="buttons">
                 <?php
@@ -20,10 +21,17 @@
                     <a id="admin" href='index.php?admin=menu'>Admin</a>
                     <a id="disconnection" href='index.php?action=disconnection'>Déconnexion</a><?php
                 }
-                if (empty($_SESSION['id'])) { ?>
+                if (empty($_SESSION['id']) AND (isset($_GET['action']) AND $_GET['action'] == 'connection')) { ?>
+                    <a id="registration" href='index.php?action=registration'>Inscription</a><?php
+                }
+                else if (empty($_SESSION['id']) AND (isset($_GET['action']) AND $_GET['action'] == 'registration')) { ?>
+                    <a id="disconnection" href='index.php?action=connection'>Connexion</a><?php
+                }
+                else { ?>
                     <a id="disconnection" href='index.php?action=connection'>Connexion</a>
                     <a id="registration" href='index.php?action=registration'>Inscription</a><?php
-                }?>
+                }
+                ?>
             </div>
             <p class="hello" >
                 <?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['pseudo']; } ?>

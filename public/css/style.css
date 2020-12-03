@@ -29,6 +29,18 @@ body header
     top: 5px;
     left: 10px; 
 }
+#home
+{
+    width: 25px;
+    height: 25px;
+    position: fixed;
+    top: 10px;
+    left: 240px; 
+    background-image: url("../images/test.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
 h1
 {
     position: fixed;
@@ -82,7 +94,7 @@ h4
 .content
 {
     padding-top: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
 }
 .posts
 {
@@ -168,15 +180,16 @@ a
 {
     color:red;
 }
-.commentForm
+.commentForm, .test
 {
     width: 50%;
-    margin: 20px auto 10px;
+    margin: 20px auto 30px;
     padding: 1px 10px;
     opacity: 80%;
     background-color: rgb(136, 136, 185);
+    text-align: center;
 }
-.commentForm p
+.commentForm p, .test
 {
     display: flex;
     flex-direction: column;
@@ -193,8 +206,8 @@ body footer
 {
     width: 100%;
     display: flex;
-    /*position: absolute;*/
-    left: -7px;
+    position: absolute;
+    left: 0px;
     bottom: 0px;
     justify-content: space-around;
     background-color: #808080bb;
@@ -202,31 +215,49 @@ body footer
 }
 
 /*------TABLETTE------*/
-@media (min-width: 768px) and (max-width: 1024px) 
+@media (min-width: 769px) and (max-width: 1024px) 
 {
+    body header
+    {
+        z-index: 2;
+    }
     #name 
     {
         font-size: 29px;
+    }
+    #home
+    {
+        left: 210px;
     }
     h1
     {
         font-size: 27px;
         padding-top: 10px;
     }
-    h4 
+    .registrationForm, .connectionForm
     {
-        width: 200px;
+        z-index: 1;
+        position: relative;
+        width: 35%;
+        top: 20px;
     }
-    
-    /*body footer 
+    body footer 
     {
-        left: -4px;
-        right: -4px;
-    }*/
+        flex-wrap: wrap;
+        text-align: center;
+        font-size: 13px;
+        padding-top: 0;
+        margin: auto;
+        width: 100%;
+    }
 }
 
-@media (min-width: 500px) and (max-width: 768px)
+@media (min-width: 501px) and (max-width: 768px)
 {
+    body header
+    {
+        z-index: 2;
+    }
     #name 
     {
         font-size: 20px;
@@ -235,6 +266,10 @@ body footer
         width: 70px;
         text-align: center;
     }
+    #home
+    {
+        left: 110px;
+    }
     h1
     {
         font-size: 22px;
@@ -242,7 +277,6 @@ body footer
     }
     .buttons
     {
-        position: fixed;
         display: flex;
         flex-direction: column;
         top: 2px;
@@ -250,8 +284,27 @@ body footer
     }
     h4 
     {
-        width: 150px;
         font-size: 13px;
+    }
+    .hello
+    {
+        right: 0px;
+    }
+    .registrationForm, .connectionForm
+    {
+        z-index: 1;
+        position: relative;
+        top: 20px;
+        width: 50%;
+    }
+    body footer 
+    {
+        flex-wrap: wrap;
+        text-align: center;
+        font-size: 13px;
+        padding-top: 0;
+        margin: auto;
+        width: 100%;
     }
 }
 
@@ -260,6 +313,7 @@ body footer
 {
     body header
     {
+        z-index: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -272,9 +326,12 @@ body footer
         width: 70px;
         text-align: center;
     }
+    #home
+    {
+        left: 90px;
+    }
     h1
     {
-        
         display: none;
     }
     .buttons
@@ -296,17 +353,27 @@ body footer
     }
     h4 
     {
-        width: 200px;
         font-size: 12px;
+    }
+    .content
+    {
+        padding-bottom: 180px;
+    }
+    .registrationForm, .connectionForm
+    {
+        z-index: 1;
+        position: relative;
+        top: 25px;
+        padding: 7% 0%;
+        width: 85%;
     }
     body footer 
     {
         flex-wrap: wrap;
         text-align: center;
+        font-size: 15px;
         padding-top: 0;
-        left: auto;
-        right: auto;
+        margin: auto;
         width: 100%;
     }
 }
-
