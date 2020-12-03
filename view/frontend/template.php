@@ -47,8 +47,8 @@
                 Plan du site
                 <ul>
                     <li><a href="#">Navigation</a></li>
-                    <li><a href="#">Qui nous sommes</a></li>
-                    <li><a href="#">Ce que nous faisons</a></li>
+                    <li><a href="#">Auteur</a></li>
+                    <li><a href="#">Mes autres romans</a></li>
                 </ul>
             </nav>
 
@@ -61,7 +61,7 @@
                 </ul>
             </nav>
 
-            <nav>
+            <nav id="copyright">
                 ©Copyright 2020 par Sarah Garrigue. Tous droits réservés.
             </nav>
         </footer>

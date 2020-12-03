@@ -43,8 +43,10 @@ while($report = $reports->fetch())
         </p>
         <p>
             <?= nl2br($report['comment']); ?>
-            <a id="delete" href='index.php?admin=deleteComment&id=<?= $report['id']; ?>'>Supprimer</a>
-            <a id="cancel" href='index.php?admin=cancelReport&id=<?= $report['id']; ?>'>Annuler</a>
+            <p class="textButtons">
+                <a id="delete" href='index.php?admin=deleteComment&id=<?= $report['id']; ?>'>Supprimer</a>
+                <a id="cancel" href='index.php?admin=cancelReport&id=<?= $report['id']; ?>'>Annuler</a>
+            </p>
         </p>
     </div>
 <?php

@@ -2,19 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?= $title ?></title>
         <script type="text/javascript" src="public/js/tinymce/tinymce.min.js"></script>
-    <!--
-        <script type="text/javascript">
-        tinymce.init({
-            selector: 'textarea#title',
-            language: "fr_FR",
-            toolbar: 'undo redo | fontselect fontsizeselect forecolor | bold italic underline strikethrough | backcolor | alignleft aligncenter alignright alignjustify | outdent indent lineheight',
-            height: 100,
-            menubar:false,
-            statusbar: false,
-        });
-    -->
         </script>
         <script type="text/javascript">
         tinymce.init({

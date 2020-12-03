@@ -1,3 +1,7 @@
+body
+{
+    width: auto;
+}
 h1, h2
 {
     text-align: center;
@@ -33,6 +37,14 @@ h1, h2
     position: absolute;
     right: 4px;
 }
+.textButtons
+{
+    position: relative;
+    width: 200px;
+    left: 39%;
+    display: inline-block;
+    text-align: center;
+}
 h3
 {
     text-align: center;
@@ -49,7 +61,6 @@ h3
 .news p
 {
     width: auto;
-   /* background-color:#CCCCCC;*/
     margin-top: 0px;
     text-align: center;
 }
@@ -78,7 +89,7 @@ a
 {
     display: inline-block;
     position: absolute;
-    top: 80px;
+    top: 20px;
     right: 4px;
     vertical-align: top;
 }
@@ -96,12 +107,7 @@ a
     width: 80%;
     padding-bottom: 5px;
     background-color:#CCCCCC;
-}/*
-.text :nth-child(odd)
-{
-    background-color:rgb(97, 95, 95);
-    color: white;
-}*/
+}
 .text p
 {
     padding-left: 3px;
@@ -125,4 +131,185 @@ a
     background-color: red;
     cursor: default;
     color: black;
+}
+@media (min-width: 769px) and (max-width: 1024px) 
+{
+    .warning
+    {
+        font-size: 30px;
+    }
+    .buttons
+    {
+        top: 60px;
+        font-size: 17px;
+        text-align: center;
+    }
+    .news
+    {
+        font-size: 17px;
+    }
+    span
+    {
+        font-size: 17px;
+    }
+    .add
+    {
+        margin-left: 10px;
+        width: 60px;
+        font-size: 17px;
+        text-align: center;
+    }
+    .newsButtons
+    {
+        width: 100px;
+        font-size: 17px;
+        right: 1px;
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .title
+    {
+        font-size: 135%;
+    }
+    .text
+    {
+        font-size: 17px;
+    }
+    .textButtons
+    {
+        position: relative;
+        width: 200px;
+        left: 48%;
+        display: inline-block;
+    }
+}
+@media (min-width: 501px) and (max-width: 768px)
+{
+    .warning
+    {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .buttons
+    {
+        top: 60px;
+        font-size: 15px;
+        text-align: center;
+    }
+    .news
+    {
+        width: 60%;
+        font-size: 17px;
+    }
+    span
+    {
+        font-size: 17px;
+    }
+    .add
+    {
+        margin-left: 10px;
+        width: 50px;
+        font-size: 15px;
+        text-align: center;
+    }
+    .newsButtons
+    {
+        width: 90px;
+        font-size: 15px;
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .title
+    {
+        width: 22%;
+        font-size: 100%;
+    }
+    .text
+    {
+        font-size: 14px;
+    }
+    .textButtons
+    {
+        position: relative;
+        width: 200px;
+        left: 46%;
+        display: inline-block;
+    }
+}
+@media (max-width: 500px)
+{
+    h1
+    {
+        font-size: 20px;
+    }
+    h2
+    {
+        font-size: 18px;
+        margin-bottom: 60px;
+        
+    }
+    .warning
+    {
+        font-size: 15px;
+        margin-bottom: 60px;
+    }
+    h4
+    {
+        font-size: 13px;
+    }
+    .buttons
+    {
+        width: 150px;
+        top: 40px;
+        font-size: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+    .news
+    {
+        width: 90%;
+        font-size: 16px;
+        padding-top: 35px;
+    }
+    span
+    {
+        font-size: 17px;
+    }
+    .add
+    {
+        margin-left: 10px;
+        width: 50px;
+        font-size: 12px;
+        text-align: center;
+    }
+    .newsButtons
+    {
+        position: relative;
+        left: 45%;
+        transform: translateX(-50%);
+        top: 80px;
+        width: 190px;
+        font-size: 12px;
+    }
+    .title
+    {
+        width: 35%;
+        font-size: 105%;
+    }
+    .text
+    {
+        width: 100%;
+        padding-bottom: 25px;
+        font-size: 13px;
+    }
+    .textButtons
+    {
+        position: relative;
+        width: 200px;
+        left: 43%;
+        display: inline-block;
+    }
 }
