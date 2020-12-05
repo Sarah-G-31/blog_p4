@@ -9,7 +9,7 @@ ob_start(); ?>
 <form action="index.php?admin=addPosts" method="post">
     <div class="news">
         <h3>Titre :<br />
-            <textarea id="title" type="textarea" id="title" name="title"></textarea>
+            <textarea id="title" type="textarea" id="title" name="title" required></textarea>
         </h3>
         <p>
             <label id="test" for="content">Contenu : </label><br />

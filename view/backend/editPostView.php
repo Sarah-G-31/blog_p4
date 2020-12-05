@@ -10,7 +10,7 @@ ob_start(); ?>
     <form action="index.php?admin=editPosts" method="post">
         <p>
             <h3>Titre :<br />
-                <textarea id="title" type="textarea" id="title" name="title"><?= $post['title']; ?></textarea>
+                <textarea id="title" type="textarea" id="title" name="title" required><?= $post['title']; ?></textarea>
             </h3>
             <p>
                 <label for="contenu">Message : </label><br />

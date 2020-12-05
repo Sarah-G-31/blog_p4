@@ -13,7 +13,7 @@ class CommentManager extends Manager
         return $comments;
     }
 
-    public function postComment($postId,  $memberId, $comment)
+    public function postComment($postId, $memberId, $comment)
     {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments (id_posts, id_members, comment, report) VALUES (?, ?, ?, 0)');
