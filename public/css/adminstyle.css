@@ -41,7 +41,8 @@ h1, h2
 {
     position: relative;
     width: 200px;
-    left: 39%;
+    margin-left: 49%;
+    transform: translateX(-50%);
     display: inline-block;
     text-align: center;
 }
@@ -176,13 +177,6 @@ a
     {
         font-size: 17px;
     }
-    .textButtons
-    {
-        position: relative;
-        width: 200px;
-        left: 48%;
-        display: inline-block;
-    }
 }
 @media (min-width: 501px) and (max-width: 768px)
 {
@@ -230,13 +224,6 @@ a
     {
         font-size: 14px;
     }
-    .textButtons
-    {
-        position: relative;
-        width: 200px;
-        left: 46%;
-        display: inline-block;
-    }
 }
 @media (max-width: 500px)
 {
@@ -261,12 +248,18 @@ a
     }
     .buttons
     {
-        width: 150px;
+        width: 80px;
         top: 40px;
         font-size: 12px;
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .buttons a
+    {
+        padding: 2px 5px;
     }
     .news
     {
@@ -301,15 +294,11 @@ a
     }
     .text
     {
-        width: 100%;
-        padding-bottom: 25px;
+        width: 90%;
         font-size: 13px;
     }
     .textButtons
     {
-        position: relative;
-        width: 200px;
-        left: 43%;
-        display: inline-block;
+        width: 150px;
     }
 }

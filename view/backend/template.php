@@ -20,8 +20,8 @@
         
     <body>
         <div class="buttons">
-            <a class="test2" href='index.php'>Quitter</a>
-            <a class="test2" href='index.php?action=disconnection'>Deconnexion</a>
+            <a href='index.php'>Quitter</a>
+            <a href='index.php?action=disconnection'>Deconnexion</a>
         </div>
         <?= $content ?>
     </body>

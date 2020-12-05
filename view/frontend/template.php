@@ -14,11 +14,10 @@
             <h1><?= $h1 ?></h1>
             <div class="buttons">
                 <?php
-                if (isset($_SESSION['admin']) AND $_SESSION['admin'] == 0) { ?>
-                    <a id="disconnection" href='index.php?action=disconnection'>Déconnexion</a><?php
-                }
-                else if (isset($_SESSION['admin']) AND $_SESSION['admin'] == 1) { ?>
-                    <a id="admin" href='index.php?admin=menu'>Admin</a>
+                if (isset($_SESSION['admin'])){
+                    if( $_SESSION['admin'] == 1) { ?>
+                    <a id="admin" href='index.php?admin=menu'>Admin</a><?php
+                    } ?>
                     <a id="disconnection" href='index.php?action=disconnection'>Déconnexion</a><?php
                 }
                 else if (empty($_SESSION['id']) AND (isset($_GET['action']) AND $_GET['action'] == 'connection')) { ?>
