@@ -184,7 +184,7 @@ a
 {
     color:red;
 }
-.commentForm, .test
+.commentForm, .commentHelp
 {
     width: 50%;
     margin: 20px auto 30px;
@@ -193,7 +193,7 @@ a
     background-color: rgb(136, 136, 185);
     text-align: center;
 }
-.commentForm p, .test
+.commentForm p, .commentHelp
 {
     display: flex;
     flex-direction: column;

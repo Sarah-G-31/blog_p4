@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name = "description" content = "Blog de l'écrivain Jean Forteroche">
         <title><?= $title ?></title>
         <link href="public/css/style.css" rel="stylesheet" /> 
     </head>
@@ -10,7 +12,7 @@
     <body>
         <header>
             <div id="name">Jean Forteroche</div>
-            <a type="button" id="home" title="Accueil" href="index.php"></a>
+            <a id="home" title="Accueil" href="index.php"></a>
             <h1><?= $h1 ?></h1>
             <div class="buttons">
                 <?php

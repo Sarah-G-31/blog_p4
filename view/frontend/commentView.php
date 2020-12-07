@@ -44,8 +44,8 @@ if (isset($_SESSION['admin']) AND $_SESSION['admin'] == 0) { ?>
 </form>
 <?php
 } else { ?>
-    <p class="test">
-        <label class="title" type="title">Merci de vous connecter pour laisser un commentaire</label>
+    <p class="commentHelp">
+        <label class="title">Merci de vous connecter pour laisser un commentaire</label>
     </p>
 <?php
 }
