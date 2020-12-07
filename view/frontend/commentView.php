@@ -9,7 +9,7 @@ ob_start(); ?>
 <div class="posts">
     <i> le <?= $post['date']; ?></i>
     <p>
-        <?= $post['content']; ?><br />
+        <?= $post['content']; ?>
     </p>
 </div>
 
