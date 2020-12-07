@@ -1,10 +1,6 @@
 <?php
-/*
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
-*/
-
-// UTILE OU PAS ? Car cela fonctionne sans les déclarer !
 
 function postsAndReports() {
     $postManager = new PostManager();

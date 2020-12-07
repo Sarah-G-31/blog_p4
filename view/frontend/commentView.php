@@ -8,9 +8,9 @@ ob_start(); ?>
 
 <div class="posts">
     <i> le <?= $post['date']; ?></i>
-    <p>
+    <div>
         <?= $post['content']; ?>
-    </p>
+    </div>
 </div>
 
 <h2>Commentaires</h2>

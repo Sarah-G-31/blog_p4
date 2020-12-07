@@ -15,10 +15,10 @@ while($post = $posts->fetch())
             <?= $post['title']; ?>
         </h3>
         <i>Publié le <?= $post['date']; ?></i>
-        <p>
+        <div>
             <?= $post['content']; ?><br />
             <a href="index.php?action=post&amp;id=<?= $post['id']; ?>"><i>Commentaires</i></a>
-        </p>
+        </div>
     </div><br />
 <?php
 }
